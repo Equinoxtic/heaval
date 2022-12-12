@@ -36,7 +36,7 @@ include_directories(
 	src
 )
 
-add_library(heavalframeworksource SHARED ${HEAVAL_SOURCE})
+add_library(heavalframeworksource STATIC ${HEAVAL_SOURCE})
 
 add_executable(heavalframework Heaval.cpp)
 
