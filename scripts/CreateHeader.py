@@ -19,7 +19,8 @@ def create_header():
 	rep_dir = directory.replace("/", ".")
 	
 	ln = [
-		"#pragma once",
+		f"#ifndef {name.upper()}_H",
+		f"#define {name.upper()}_H",
 		"",
 		"/*",
 		"	Auto-Generated header file with CreateHeader.py",
@@ -28,19 +29,20 @@ def create_header():
 		f"	Directory: {rep_dir}"
 		"",
 		"*/"
-		"",
-		"",
+		"\n",
 		"namespace heaval"
 		"",
 		"{",
 		f"	class {name}",
 		"	{",
 		"		public:",
-		"		// Public keywords go here...",
+		"			// Public keywords go here...",
 		"		private:",
-		"		// Private keywords go here...",
+		"			// Private keywords go here...",
 		"	};",
-		"}" + f" // {name}.h"
+		"}",
+		"",
+		f"#endif // {name}.h"
 	]
 	
 	if name is not None:
