@@ -55,11 +55,8 @@ def create_header():
 		"\n",
 		"namespace heaval\n",
 		"{\n",
-		f"\tclass {name}\n"
-		"\t{\n",
-		"\t\t// Class definitions go here...\n",
-		"\t};\n",
-		"}"
+		"\t// Class definitions go here...\n",
+		"}\n"
 	]
 
 	# class_str = f"#include \"{name}.h\"" + "\n\nnamespace heaval\n{" + f"\n\tclass {name}" + "\n\t{\n\t\t// Class Deinitions go here...\n\t};\n}"
