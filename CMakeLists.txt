@@ -2,31 +2,49 @@ cmake_minimum_required(VERSION 3.2)
 
 project ("heavalframework")
 
-set(SOURCE_MAIN
-	Heaval.cpp
-	Heaval.h
-)
-
-source_group("main" FILES ${SOURCE_MAIN})
-
 set(SOURCE_IO
 	src/io/Stdio.cpp
 	src/io/Stdio.h
+	src/io/StdUtils.cpp
+	src/io/StdUtils.h
 )
 
 source_group("io" FILES ${SOURCE_IO})
 
-set(FRAMEWORK_SOURCE
-	src/framework/HeavalBase.cpp
-	src/framework/HeavalBase.h
+set(SOURCE_MATH
+	src/math/Formula.cpp
+	src/math/Formula.h
+	src/math/Math.cpp
+	src/math/Math.h
+	src/math/MathUtils.cpp
+	src/math/MathUtils.h
 )
 
-source_group("framework" FILES ${FRAMEWORK_SOURCE})
+source_group("math" FILES ${SOURCE_MATH})
+
+set(SOURCE_LIB
+	src/lib/Convert.cpp
+	src/lib/Convert.h
+)
+
+source_group("lib" FILES ${SOURCE_LIB})
+
+set(SOURCE_FRAMEWORK
+	src/framework/HeavalFramework.cpp
+	src/framework/HeavalFramework.h
+	src/framework/FrameworkHooks.cpp
+	src/framework/FrameworkHooks.h
+)
+
+source_group("framework" FILES ${SOURCE_LIB})
 
 set(HEAVAL_SOURCE
 	${SOURCE_MAIN}
 	${SOURCE_IO}
 	${FRAMEWORK_SOURCE}
+	${SOURCE_MATH}
+	${SOURCE_LIB}
+	${SOURCE_FRAMEWORK}
 )
 
 link_directories(${HEAVAL_SOURCE})
