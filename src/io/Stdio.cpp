@@ -4,17 +4,18 @@
 
 namespace heaval
 {
-	Stdio::Stdio() {}
-
-	Stdio::~Stdio() {}
-	
-	void Stdio::put(const std::string &stringptr)
+	void Stdio::put(std::string strContent)
 	{
-		std::cout << stringptr;
+		std::cout << strContent;
 	}
 
-	void Stdio::get(std::string &stringptr)
+	void Stdio::putLn(std::string strContent)
 	{
-		std::getline(std::cin, stringptr);
+		Stdio::put(strContent + "\n");
+	}
+
+	void Stdio::get(std::string &strptr)
+	{
+		std::getline(std::cin, strptr);
 	}
 }
