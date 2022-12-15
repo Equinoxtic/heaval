@@ -1,6 +1,7 @@
 #include "HeavalFramework.h"
 
 #include "io/Stdio.h"
+#include "lib/StringUtils.h"
 
 namespace heaval
 {
@@ -13,6 +14,6 @@ namespace heaval
 
 	void HeavalFramework::ENTRY_POINT()
 	{
-		Stdio::putLn("Hello World!");
+		Stdio::put(StringUtils::upperString("Hello World!"));
 	}
 }

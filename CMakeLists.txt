@@ -25,6 +25,8 @@ source_group("math" FILES ${SOURCE_MATH})
 set(SOURCE_LIB
 	src/lib/Convert.cpp
 	src/lib/Convert.h
+	src/lib/StringUtils.cpp
+	src/lib/StringUtils.h
 )
 
 source_group("lib" FILES ${SOURCE_LIB})
