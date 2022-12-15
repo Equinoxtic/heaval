@@ -1,4 +1,5 @@
-#pragma once
+#ifndef STDUTILS_H
+#define STDUTILS_H
 
 /*
 	Auto-Generated header file with CreateHeader.py
@@ -37,4 +38,6 @@ namespace heaval
 		private:
 		// Private keywords go here...
 	};
-} // StdUtils.h
+}
+
+#endif // StdUtils.h
