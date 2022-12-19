@@ -13,7 +13,13 @@ namespace heaval
 	{
 		public:
 			// Public keywords go here...
+
+			unsigned getSleepTime(unsigned ms);
+
 			void cSleep(unsigned ms);
+
+			void msSleep(unsigned ms);
+			
 		private:
 			// Private keywords go here...
 	};
