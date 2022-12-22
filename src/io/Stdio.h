@@ -16,20 +16,22 @@ namespace heaval
 
 		// Public keywords go here...
 
-		static void put(std::string strContent);
-		static void put(bool content);
-		static void put(int content);
-		static void put(float content);
+		static void put(std::string __string__);
+		static void putBool(bool condition);
+		static void putBoolName(bool condition);
+		static void putNumber(int num);
+		static void putNumber(float num);
 
-		static void putLn(std::string strContent);
-		static void putLn(bool content);
-		static void putLn(int content);
-		static void putLn(float content);
+		static void putLn(std::string __string__);
+		static void putBoolLn(bool condition);
+		static void putBoolNameLn(bool condition);
+		static void putNumberLn(int num);
+		static void putNumberLn(float num);
 
 		static void get(std::string &stringptr);
 
 		private:
-
+;
 		// Private keywords go here...
 	};
 } // Stdio.h
