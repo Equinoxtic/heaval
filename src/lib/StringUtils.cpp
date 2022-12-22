@@ -47,6 +47,37 @@ namespace heaval
 		return caseString(1, tStr);
 	}
 
+	std::string StringUtils::repeatString(std::string STRING, int LENGTH)
+	{
+		const int MAX_LENGTH = 150;
+
+		std::string NEW_STRING;
+
+		if (LENGTH >= 150)
+		{
+			LENGTH = MAX_LENGTH;
+		}
+
+		for (int i = 0; i < LENGTH; ++i)
+		{
+			if (!STRING.empty())
+			{
+				NEW_STRING += STRING;
+			}
+			else
+			{
+				NEW_STRING = "string";
+			}
+		}
+
+		return NEW_STRING;
+	}
+
+	bool StringUtils::stringEmpty(std::string str)
+	{
+		bool isEmpty = (str.empty() ? true : false); return isEmpty;
+	}
+
 	bool StringUtils::strCompare(std::string a, std::string b)
 	{
 		return ((a == b) ? true : false);
@@ -67,6 +98,10 @@ namespace heaval
 		if (!baseString.empty() && !targetString.empty())
 		{
 			FOUND = (FOUND_STRING != LOCAL_NPOS);
+		}
+		else
+		{
+			FOUND = false;
 		}
 
 		return FOUND;
