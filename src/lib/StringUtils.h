@@ -29,6 +29,12 @@ namespace heaval
 			// Lowercase a string.
 			static std::string lowerString(std::string tStr);
 
+			// Repeat a certain string, and returns it.
+			static std::string repeatString(std::string STRING, int LENGTH);
+
+			// Check if string is empty.
+			static bool stringEmpty(std::string str);
+
 			// Compare two strings.
 			static bool strCompare(std::string a, std::string b);
 

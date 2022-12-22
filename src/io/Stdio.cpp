@@ -28,7 +28,7 @@ namespace heaval
 	{
 		std::string stringBool;
 
-		if (condition == 1 || condition == true){
+		if (condition == 1 || condition == true) {
 			stringBool = "true";
 		} else if (condition == 0 || condition == false) {
 			stringBool = "false";

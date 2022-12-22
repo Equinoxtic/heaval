@@ -1,12 +1,5 @@
 # Building Heaval
 
-## Components
-
-* Visual Studio 2022 w/ C++ Desktop Development workload
-* CMake 3.XX.X
-
-## Building
-
 To build, just run the following set of commands:
 
 ```shell
