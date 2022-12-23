@@ -88,7 +88,7 @@ namespace heaval
 		return str.size() >= pref.size() && str.compare(0, pref.size(), pref) == 0;
 	}
 
-	bool findString(std::string baseString, std::string targetString)
+	bool StringUtils::findString(std::string baseString, std::string targetString)
 	{
 		bool FOUND = false;
 
