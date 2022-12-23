@@ -23,6 +23,9 @@ namespace heaval
 			/* Create a tab character. */
 			static void tab();
 
+			/* Create a backspace character. */
+			static void backspace();
+
 			/* Create a space character. */
 			static void space();
 
@@ -31,6 +34,9 @@ namespace heaval
 
 			/* Get the tab character. */
 			static std::string getTab();
+
+			/* Get the backspace character. */
+			static std::string getBackspace();
 
 			/* Get the space character. */
 			static std::string getSpace();
