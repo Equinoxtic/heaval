@@ -1,6 +1,8 @@
 #include "FrameworkHooks.h"
 #include "lib/sys/System.h"
 #include "framework/modules/display/Title.h"
+#include "io/Stdio.h"
+#include "lib/StringUtils.h"
 
 /*
 	Auto-Generated C++ file for header: FrameworkHooks.h with CreateHeader.py
@@ -17,7 +19,7 @@ namespace heaval
 		Title::displayTitle();
 	}
 
-	void FrameworkHooks::IntializeHooks(bool doClearScreen, bool showTitle, bool showOptions)
+	void FrameworkHooks::IntializeHooks(bool doClearScreen, bool showTitle, bool titleNewline, bool showOptions)
 	{
 		if (doClearScreen)
 		{
@@ -27,6 +29,9 @@ namespace heaval
 		if (showTitle)
 		{
 			FrameworkHooks::GenerateTitle();
+			if (titleNewline) {
+				Stdio::put(StringUtils::repeatString("\n", 2));
+			}
 		}
 
 		/* if (showOptions)

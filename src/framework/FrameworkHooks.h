@@ -20,7 +20,7 @@ namespace heaval
 
 			static void GenerateShellPrompt();
 
-			static void IntializeHooks(bool doClearScreen = true, bool showTitle = true, bool showOptions = false);
+			static void IntializeHooks(bool doClearScreen = true, bool showTitle = true, bool titleNewline = true, bool showOptions = false);
 
 		private:
 			// Private keywords go here...
