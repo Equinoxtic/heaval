@@ -55,7 +55,7 @@ def create_header_sources(dirptr, nameptr, extptr, tbl=None):
 		write_to_header_files(dirptr, f"{nameptr}.{extptr}", tbl[i])
 
 def print_title():
-	print(f"{GREEN}[C++ Header Creation Script]{END}\n {BLUE}~ By{END} {PURPLE}Larixssa{END} {RED}<3{END}")
+	print(f"{GREEN}\n[C++ Header Creation Script]{END}\n {BLUE}~ By{END} {PURPLE}Larixssa{END} {RED}<3{END}")
 
 def create_header():
 	print_title()
@@ -63,7 +63,7 @@ def create_header():
 	directory = "src"
 	print(f"\n{CYAN}[Input name]{END} {GREEN}~ ${END} ", end="")
 	name = input()
-	print(f"{CYAN}[Directory to create]{END} {GREEN}~ ${END} ", end="")
+	print(f"\n{CYAN}[Directory to create]{END} {GREEN}~ ${END} ", end="")
 	directory = input()
 	rep_dir = directory.replace("/", ".")
 	
@@ -114,7 +114,7 @@ def create_header():
 			create_files(directory, name)
 			create_header_sources(directory, name, "h", h_file_ln)
 			create_header_sources(directory, name, "cpp", cpp_file_ln)
-			print(f"{BLUE}Created header files for {name}{END} @ {GREEN}[\"~/{directory}/\"]{END}")
+			print(f"\n{BLUE}Created header files for {name}{END} @ {GREEN}[~/{directory}/]{END}")
 
 
 
