@@ -36,21 +36,11 @@ namespace heaval
 
 	bool Command::checkCommand(std::string baseString, std::string commandString)
 	{
-		bool isCommand = false;
-		if (!StringUtils::stringEmpty(baseString) && !StringUtils::stringEmpty(commandString))
-		{
-			isCommand = (StringUtils::strCompare(baseString, commandString));
-		}
-		return isCommand;
+		return (StringUtils::strCompare(baseString, commandString) ? true : false);
 	}
 
 	bool Command::checkCommandStartsWith(std::string baseString, std::string commandString)
 	{
-		bool isCommand = false;
-		if (!StringUtils::stringEmpty(baseString) && !StringUtils::stringEmpty(commandString))
-		{
-			isCommand = (StringUtils::startsWith(baseString, commandString));
-		}
-		return isCommand;
+		return (StringUtils::startsWith(baseString, commandString) ? true : false);
 	}
 }
