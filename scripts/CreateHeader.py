@@ -105,11 +105,9 @@ def create_header():
 		"\n\n",
 		"namespace heaval\n",
 		"{\n",
-		"\t /* Class definitions can go here. */\n",
+		"\t/* Class definitions can go here. */\n",
 		"}"
 	]
-
-	# class_str = f"#include \"{name}.h\"" + "\n\nnamespace heaval\n{" + f"\n\tclass {name}" + "\n\t{\n\t\t// Class Deinitions go here...\n\t};\n}"
 	
 	if name is not [None, ""]:
 		if directory is not [None, ""]:

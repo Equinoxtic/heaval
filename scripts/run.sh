@@ -1,4 +1,4 @@
 #!bin/sh
 
-cmake --build build --target heavalframework --config release
-./build/release/heavalframework.exe
+powershell -command cmake --build build --target heavalframework --config Release
+./build/Release/heavalframework.exe

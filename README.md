@@ -29,3 +29,7 @@ python -u "scripts/CreateHeader.py"
 
 ----------------------------------------------------------------------------------------------------
 
+### Extra repository information
+
+* [License](https://github.com/Equinoxtic/heaval/blob/master/LICENSE)
+<!-- * [Building Documentation](https://github.com/Equinoxtic/heaval/blob/master/docs/Building.md) -->
