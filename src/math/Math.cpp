@@ -2,10 +2,10 @@
 
 namespace heaval
 {
-	void Math::setNum(int n) { intn = n; }
+	/* void Math::setNum(int n) { intn = n; }
 	void Math::setNum(float n) { floatn = n; }
 	int Math::getIntNum() { return intn; }
-	float Math::getFloatNum() { return floatn; }
+	float Math::getFloatNum() { return floatn; } */
 
 	int Math::add(int x, int y) { return x + y; }
 	int Math::subt(int x, int y) { return x - y; }

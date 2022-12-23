@@ -14,11 +14,12 @@ namespace heaval
 		public:
 		// Public keywords go here...
 
-
+		/*
 		void setNum(int n);
 		void setNum(float n);
 		int getIntNum();
 		float getFloatNum();
+		*/
 
 
 		// Addition
@@ -43,8 +44,8 @@ namespace heaval
 
 		private:
 		// Private keywords go here...
-		int intn;
-		float floatn;
+		// int intn;
+		// float floatn;
 	};
 }
 

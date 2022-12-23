@@ -7,14 +7,24 @@
 	Directory: src.math
 */
 
+#include<string>
+
 namespace heaval
 {
 	class MathUtils 
 	{
 		public:
 		// Public keywords go here...
-		bool isPositive(int n);
-		bool isNegative(int n);
+
+		static bool isPositive(int n);
+
+		static bool isPositive(float n);
+
+		static bool isNegative(int n);
+
+		static bool isNegative(float n);
+
+		static std::string getStringDecimal(float n);
 		
 		private:
 		// Private keywords go here...
