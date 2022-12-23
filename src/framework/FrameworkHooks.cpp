@@ -1,6 +1,7 @@
 #include "FrameworkHooks.h"
 #include "lib/sys/System.h"
 #include "framework/modules/display/Title.h"
+#include "framework/modules/display/Linebar.h"
 #include "io/Stdio.h"
 #include "lib/StringUtils.h"
 
@@ -32,6 +33,7 @@ namespace heaval
 			if (titleNewline) {
 				Stdio::put(StringUtils::repeatString("\n", 2));
 			}
+			Linebar::displayLinebar();
 		}
 
 		/* if (showOptions)

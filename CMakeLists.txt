@@ -72,6 +72,8 @@ set(SOURCE_FRAMEWORK_INFO
 set(SOURCE_FRAMEWORK_DISPLAY
 	src/framework/modules/display/Title.cpp
 	src/framework/modules/display/Title.h
+	src/framework/modules/display/Linebar.cpp
+	src/framework/modules/display/Linebar.h
 )
 
 source_group("framework" FILES ${SOURCE_FRAMEWORK})
