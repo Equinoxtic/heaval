@@ -31,7 +31,7 @@ namespace heaval
 							+ " : "+ StringUtils::quoteString(Command::DEFAULT_DESCRIPTION);
 		}
 
-		return fCommandString;
+		return "* " + fCommandString;
 	}
 
 	bool Command::checkCommand(std::string baseString, std::string commandString)
