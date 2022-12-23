@@ -25,6 +25,8 @@ source_group("math" FILES ${SOURCE_MATH})
 set(SOURCE_CMDUTILS
 	src/cmdutils/Command.cpp
 	src/cmdutils/Command.h
+	src/cmdutils/Flag.cpp
+	src/cmdutils/Flag.h
 )
 
 source_group("cmdutils" FILES ${SOURCE_CMDUTILS})
