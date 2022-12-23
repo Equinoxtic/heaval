@@ -36,24 +36,20 @@ namespace heaval
 		return f_float;
 	}
 
-	std::stringstream Convert::numToStr(int intn)
+	std::string Convert::numToStr(int intn)
 	{
-		std::stringstream convertedNumber;
-		convertedNumber << intn;
-		return convertedNumber;
+		return std::to_string(intn);
 	}
 
-	std::stringstream Convert::numToStr(float fltn)
+	std::string Convert::numToStr(float fltn)
 	{
-		std::stringstream convertedNumber;
-		convertedNumber << fltn;
-		return convertedNumber;
+		return std::to_string(fltn);
 	}
 
 	int strToInt(std::string strn)
 	{
-		int cInt; 
-		
+		int cInt;
+
 		if (!strn.empty())
 		{
 			cInt = castToInt(strn);
@@ -62,14 +58,14 @@ namespace heaval
 		{
 			cInt = 1;
 		}
-		
+
 		return cInt;
 	}
 
 	float strToFl(std::string strfl)
 	{
 		float cFloat;
-		
+
 		if (!strfl.empty())
 		{
 			cFloat = castToFloat(strfl);
@@ -78,7 +74,7 @@ namespace heaval
 		{
 			cFloat = 1.0f;
 		}
-		
+
 		return cFloat;
 	}
 }

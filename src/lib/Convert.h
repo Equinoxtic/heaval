@@ -8,7 +8,6 @@
 */
 
 #include<string>
-#include<sstream>
 
 namespace heaval
 {
@@ -17,9 +16,9 @@ namespace heaval
 		public:
 		// Public keywords go here...
 
-		static std::stringstream numToStr(int intn);
+		static std::string numToStr(int intn);
 
-		static std::stringstream numToStr(float fltn);
+		static std::string numToStr(float fltn);
 
 		static int strToInt(std::string strn);
 
