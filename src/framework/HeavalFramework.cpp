@@ -5,6 +5,7 @@
 #include "lib/sys/System.h"
 #include "cmdutils/Command.h"
 #include "math/Formula.h"
+#include "framework/modules/display/Prompt.h"
 
 namespace heaval
 {
@@ -18,5 +19,7 @@ namespace heaval
 	void HeavalFramework::ENTRY_POINT()
 	{
 		FrameworkHooks::IntializeHooks();
+		Stdio::put("Hello, Heaval!");
+		System::Pause();
 	}
 }

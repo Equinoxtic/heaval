@@ -30,10 +30,11 @@ namespace heaval
 		if (showTitle)
 		{
 			FrameworkHooks::GenerateTitle();
+			Stdio::put(StringUtils::repeatString("\n", 2));
+			Linebar::displayLinebar();
 			if (titleNewline) {
 				Stdio::put(StringUtils::repeatString("\n", 2));
 			}
-			Linebar::displayLinebar();
 		}
 
 		/* if (showOptions)
