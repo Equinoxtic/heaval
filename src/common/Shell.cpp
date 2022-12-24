@@ -40,7 +40,7 @@ namespace heaval
 			fShellString = fShellUser + fShellStringType;
 		}
 
-		return fShellString;
+		return fShellString + " ";
 	}
 
 	void Shell::generateShell()
