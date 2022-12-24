@@ -39,12 +39,12 @@ namespace heaval
 
 	std::string StringUtils::upperString(std::string tStr)
 	{
-		return caseString(0, tStr);
+		return std::string(caseString(0, tStr));
 	}
 
 	std::string StringUtils::lowerString(std::string tStr)
 	{
-		return caseString(1, tStr);
+		return std::string(caseString(1, tStr));
 	}
 
 	std::string StringUtils::repeatString(std::string STRING, int LENGTH)
