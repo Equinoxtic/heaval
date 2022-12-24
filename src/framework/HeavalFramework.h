@@ -20,7 +20,7 @@ namespace heaval
 
 		~HeavalFramework();
 
-		static void ENTRY_POINT();
+		static void ENTRY_POINT(bool isReinit = true);
 
 		private:
 		// Private keywords go here...

@@ -17,10 +17,10 @@ namespace heaval
 			// Public keywords go here...
 
 			// Exit function.
-			static void Exit();
+			static void Exit(int exitStatus);
 
 			// Pause function. (Usually provides a prompt before continuing)
-			static void Pause();
+			static void Pause(int exitStatus);
 
 			// Clear the screen.
 			static void Clear();

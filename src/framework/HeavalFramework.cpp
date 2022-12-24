@@ -3,23 +3,37 @@
 #include "io/Stdio.h"
 #include "lib/StringUtils.h"
 #include "lib/sys/System.h"
-#include "cmdutils/Command.h"
-#include "math/Formula.h"
-#include "framework/modules/display/Prompt.h"
+#include "parser/CommandParser.h"
 
 namespace heaval
 {
 	HeavalFramework::HeavalFramework()
 	{
-		HeavalFramework::ENTRY_POINT();
+		HeavalFramework::ENTRY_POINT(true);
 	}
 
 	HeavalFramework::~HeavalFramework() {}
 
-	void HeavalFramework::ENTRY_POINT()
+	void HeavalFramework::ENTRY_POINT(bool isReinit)
 	{
-		FrameworkHooks::IntializeHooks();
-		Stdio::put("Hello, Heaval!");
-		System::Pause();
+		std::string input;
+
+		if (isReinit)
+		{
+			FrameworkHooks::IntializeHooks();
+		}
+
+		FrameworkHooks::GenerateShellPrompt();
+
+		Stdio::get(input);
+
+		if (!StringUtils::stringEmpty(input))
+		{
+			CommandParser::parseHandler(input);
+		}
+		else
+		{
+			HeavalFramework::ENTRY_POINT(false);
+		}
 	}
 }

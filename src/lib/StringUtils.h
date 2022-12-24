@@ -39,7 +39,7 @@ namespace heaval
 			static bool strCompare(std::string a, std::string b);
 
 			// Check whether if string starts with a specific string.
-			static bool startsWith(const std::string& str, const std::string& pref);
+			static bool startsWith(const std::string& str, const std::string& prefix);
 
 			// Find a string inside of a string.
 			static bool findString(std::string baseString, std::string targetString);

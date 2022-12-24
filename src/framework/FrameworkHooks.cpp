@@ -4,6 +4,8 @@
 #include "framework/modules/display/Linebar.h"
 #include "io/Stdio.h"
 #include "lib/StringUtils.h"
+#include "common/Shell.h"
+#include "parser/CommandParser.h"
 
 /*
 	Auto-Generated C++ file for header: FrameworkHooks.h with CreateHeader.py
@@ -18,6 +20,16 @@ namespace heaval
 	void FrameworkHooks::GenerateTitle()
 	{
 		Title::displayTitle();
+	}
+
+	void FrameworkHooks::GenerateOptions()
+	{
+		CommandParser::getCommandList(true);
+	}
+
+	void FrameworkHooks::GenerateShellPrompt()
+	{
+		Shell::generateShell();
 	}
 
 	void FrameworkHooks::IntializeHooks(bool doClearScreen, bool showTitle, bool titleNewline, bool showOptions)
@@ -37,11 +49,9 @@ namespace heaval
 			}
 		}
 
-		/* if (showOptions)
+		if (showOptions)
 		{
 			FrameworkHooks::GenerateOptions();
 		}
-
-		FrameworkHooks::GenerateShellPrompt(); */
 	}
 }

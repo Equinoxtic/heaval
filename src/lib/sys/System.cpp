@@ -15,19 +15,28 @@ namespace heaval
 {
 	// Class definitions go here...
 
-	void System::Exit()
+	void System::Exit(int exitStatus)
 	{
+		if (exitStatus == 1)
+		{
+			#ifdef _WIN32
+				system("cls");
+			#else
+				system("clear");
+			#endif
+		}
 		exit(0);
 	}
 
-	void System::Pause()
+	void System::Pause(int exitStatus)
 	{
 		Stdio::put(
 			StringUtils::repeatString(StdUtils::getNewline(), 2) +
 			"Press any key to continue..."
 		); getchar();
-		System::Clear();
-		System::Exit();
+		if (exitStatus == 1) {
+			System::Exit(1);
+		}
 	}
 
 	void System::Clear()
