@@ -20,6 +20,7 @@ namespace heaval
 		{
 			Stdio::putLn(Command::createCommand(list[i], desc[i]));
 		}
+		Stdio::put("\n");
 	}
 
 	void CommandHandler::parseCommand(std::string* list, std::string input, int listSize)
@@ -28,12 +29,15 @@ namespace heaval
 
 		for (int i = 0; i < listSize; ++i)
 		{
-			doParse = (StringUtils::startsWith(input, list[i]) ? true : false);
+			if (StringUtils::startsWith(input, list[i]))
+			{
+				doParse = true;
+			}
 		}
 
 		if (doParse)
 		{
-
+			Calls::callCommand(input);
 		}
 	}
 }
