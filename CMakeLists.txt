@@ -25,19 +25,43 @@ source_group("math" FILES ${SOURCE_MATH})
 set(SOURCE_CMDUTILS
 	src/cmdutils/Command.cpp
 	src/cmdutils/Command.h
+	src/cmdutils/CommandHandler.cpp
+	src/cmdutils/CommandHandler.h
 	src/cmdutils/Flag.cpp
 	src/cmdutils/Flag.h
 )
 
 source_group("cmdutils" FILES ${SOURCE_CMDUTILS})
 
+set(SOURCE_CONSOLE
+	src/console/ConsoleLogging.cpp
+	src/console/ConsoleLogging.h
+	src/console/ConsoleMessage.cpp
+	src/console/ConsoleMessage.h
+)
+
+source_group("console" FILES ${SOURCE_CONSOLE})
+
+set(SOURCE_PARSER
+	src/parser/Calls.cpp
+	src/parser/Calls.h
+	src/parser/CommandParser.cpp
+	src/parser/CommandParser.h
+)
+
+source_group("parser" FILES ${SOURCE_PARSER})
+
 set(SOURCE_LIB
 	src/lib/Convert.cpp
 	src/lib/Convert.h
+	src/lib/File.cpp
+	src/lib/File.h
 	src/lib/StringUtils.cpp
 	src/lib/StringUtils.h
 	src/lib/Thread.cpp
 	src/lib/Thread.h
+	src/lib/Time.cpp
+	src/lib/Time.h
 )
 
 set(SOURCE_LIB_SYS
@@ -51,6 +75,8 @@ source_group("lib" FILES ${SOURCE_LIB})
 source_group("lib\\sys" FILES ${SOURCE_LIB_SYS})
 
 set(SOURCE_COMMON
+	src/common/Paths.cpp
+	src/common/Paths.h
 	src/common/Resources.cpp
 	src/common/Resources.h
 	src/common/Shell.cpp
@@ -88,6 +114,9 @@ set(HEAVAL_SOURCE
 	${SOURCE_MAIN}
 	${SOURCE_IO}
 	${SOURCE_CMDUTILS}
+	${SOURCE_PARSER}
+	${SOURCE_CONSOLE}
+	${SOURCE_PARSER}
 	${SOURCE_MATH}
 	${SOURCE_LIB}
 	${SOURCE_LIB_SYS}
