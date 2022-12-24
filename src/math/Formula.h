@@ -22,9 +22,15 @@ namespace heaval
 
 		static float DEFAULT_Y;
 
+		static bool HINTS_ENABLED;
+
 		static std::string createFormula(std::string operation, float x, float y);
 
+		static std::string createAdvancedFormula(std::string operation, float x, float y, bool hints);
+
 		static void formulaOutput();
+
+		static void advancedFormulaOutput();
 
 		private:
 		// Private keywords go here...

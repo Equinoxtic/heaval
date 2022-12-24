@@ -16,4 +16,16 @@ namespace heaval
 	float Math::subt(float x, float y) { return x - y; }
 	float Math::mult(float x, float y) { return x * y; }
 	float Math::div(float x, float y) { return x / y; }
+
+	float Math::pi() { return 3.14f; }
+
+	int Math::pwr(int x, int pwr)
+	{
+		return pow(x, pwr);
+	}
+
+	float Math::pwr(float x, float pwr)
+	{
+		return pow(x, pwr);
+	}
 }
