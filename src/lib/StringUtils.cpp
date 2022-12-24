@@ -83,9 +83,9 @@ namespace heaval
 		return ((a == b) ? true : false);
 	}
 
-	bool StringUtils::startsWith(const std::string& str, const std::string& pref)
+	bool StringUtils::startsWith(const std::string& str, const std::string& prefix)
 	{
-		return str.size() >= pref.size() && str.compare(0, pref.size(), pref) == 0;
+		return (str.size() >= prefix.size() && str.compare(0, prefix.size(), prefix)) == 0;
 	}
 
 	bool StringUtils::findString(std::string baseString, std::string targetString)
