@@ -1,6 +1,7 @@
 #include "HeavalFramework.h"
 #include "FrameworkHooks.h"
 #include "io/Stdio.h"
+#include "lib/sys/System.h"
 
 namespace heaval
 {
