@@ -23,7 +23,7 @@ Creating a new header will require Python.
 
 Run the following code:
 
-```cs
+```shell
 python -u "scripts/CreateHeader.py"
 ```
 
