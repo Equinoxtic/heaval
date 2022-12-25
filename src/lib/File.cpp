@@ -25,15 +25,16 @@ namespace heaval
 		}
 	}
 
-	void File::readFile(std::string file)
+	std::string File::readFile(std::string file)
 	{
 		std::string ln;
+		std::string fln;
 		std::ifstream fFile(file);
 		if (fFile.is_open())
 		{
 			while (std::getline(fFile, ln))
 			{
-				std::cout << ln;
+				fln = ln;
 			}
 			fFile.close();
 		}
@@ -41,6 +42,13 @@ namespace heaval
 		{
 			Stdio::put("Unable to open file.");
 		}
+		
+		return fln;
+	}
+
+	void File::readFileOut(std::string file)
+	{
+		Stdio::put(File::readFile(file));
 	}
 
 	void File::clearFile(std::string file)

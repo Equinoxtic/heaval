@@ -20,7 +20,9 @@ namespace heaval
 
 			static void writeFile(std::string file, std::string content);
 
-			static void readFile(std::string file);
+			static std::string readFile(std::string file);
+
+			static void readFileOut(std::string file);
 
 			static void clearFile(std::string file);
 
