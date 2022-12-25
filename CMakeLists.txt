@@ -106,9 +106,19 @@ set(SOURCE_FRAMEWORK_DISPLAY
 	src/framework/modules/display/Prompt.h
 )
 
+set(SOURCE_FRAMEWORK_HANDLES
+	src/framework/modules/handle/Error.cpp
+	src/framework/modules/handle/Error.h
+	src/framework/modules/handle/Warning.cpp
+	src/framework/modules/handle/Warning.h
+	src/framework/modules/handle/Process.cpp
+	src/framework/modules/handle/Process.h
+)
+
 source_group("framework" FILES ${SOURCE_FRAMEWORK})
 source_group("framework\\info" FILES ${SOURCE_FRAMEWORK_INFO})
 source_group("framework\\modules\\display" FILES ${SOURCE_FRAMEWORK_DISPLAY})
+source_group("framework\\modules\\handle" FILES ${SOURCE_FRAMEWORK_HANDLES})
 
 set(HEAVAL_SOURCE
 	${SOURCE_MAIN}
@@ -124,6 +134,7 @@ set(HEAVAL_SOURCE
 	${SOURCE_FRAMEWORK_INFO}
 	${SOURCE_COMMON}
 	${SOURCE_FRAMEWORK_DISPLAY}
+	${SOURCE_FRAMEWORK_HANDLES}
 )
 
 link_directories(${HEAVAL_SOURCE})

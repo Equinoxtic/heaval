@@ -7,6 +7,8 @@
 	Directory: src.math
 */
 
+#include<cmath>
+
 namespace heaval
 {
 	class Math
@@ -40,6 +42,11 @@ namespace heaval
 		// Division
 		static int div(int x, int y);
 		static float div(float x, float y);
+
+		// Misc.
+		static float pi();
+		static int pwr(int x, int pwr);
+		static float pwr(float x, float pwr);
 
 
 		private:

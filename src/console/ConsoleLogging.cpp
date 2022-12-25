@@ -48,13 +48,13 @@ namespace heaval
 				if (StringUtils::strCompare(type, "default")) {
 					ConsoleLogging::log(message, logfile);
 				} else if (StringUtils::strCompare(type, "warning")) {
-					logHeader = "warning";
+					logHeader = "WARNING";
 				} else if (StringUtils::strCompare(type, "error")) {
-					logHeader = "error";
+					logHeader = "ERROR";
 				}
 
 				if (!StringUtils::strCompare(type, "default")) {
-					fLogString = StringUtils::surroundString(StringUtils::upperString(logHeader), "[", "]") + " @ " + StringUtils::surroundString(Time::getTime(), "(", ")") +  " > ";
+					fLogString = StringUtils::surroundString(logHeader, "[", "]") + " @ " + StringUtils::surroundString(Time::getTime(), "(", ")") +  " > ";
 				}
 			}
 		}

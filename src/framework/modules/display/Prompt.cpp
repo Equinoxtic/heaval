@@ -30,12 +30,10 @@ namespace heaval
 		{
 			std::string borderString;
 
-			std::string upperOptions = StringUtils::upperString(options);
-
 			if (StringUtils::strCompare(border, "brackets")) {
-				borderString = StringUtils::surroundString(upperOptions, "[", "]");
+				borderString = StringUtils::surroundString(options, "[", "]");
 			} else if (StringUtils::strCompare(border, "parenthesis")) {
-				borderString = StringUtils::surroundString(upperOptions, "(", ")");
+				borderString = StringUtils::surroundString(options, "(", ")");
 			}
 
 			fPromptString = StringUtils::surroundString(optionString, "[", "]") + " - " + borderString + " > ";
