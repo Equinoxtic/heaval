@@ -16,7 +16,7 @@ namespace heaval
 
 	std::string Shell::shellUserString = "usr/console";
 
-	std::string Shell::shellType = "custom";
+	std::string Shell::shellType = File::readFile("config/default_shell_type.txt");
 
 	std::string Shell::createShell(std::string usr, std::string shType)
 	{
