@@ -27,30 +27,33 @@ namespace heaval
 
 		std::string errorHeader = StringUtils::surroundString("ERROR", "[", "]");
 
+		bool isRuntime = false;
+
 		if (!StringUtils::stringEmpty(type))
 		{
 			if (StringUtils::strCompare(type, "error")) {
 				fErrorString = msgkw;
 			} else if (StringUtils::strCompare(type, "runtime")) {
+				isRuntime = true;
 				fErrorString = msgkw + " has failed to run because of runtime errors."
-							+ "\n\nRead the documentation of " + msgkw + " on how it is built."
+							+ "\n> Read the documentation of " + msgkw + " on how it is built."
 							+ "\n\n* [Building Documentation] (" + getBuildDoc() + ")";
 			}
 		}
 
 		std::string fullError;
 
-		if (!StringUtils::strCompare(type, "runtime"))
+		if (!isRuntime)
 		{
 			fullError = errorHeader + ": " + StringUtils::quoteString(fErrorString);
 		}
 		else
 		{
 			fullError = StringUtils::surroundString(
-						"ERROR",
-						StringUtils::repeatString("-", 5),
-						StringUtils::repeatString("-", 5)
-					);
+						" RUNTIME ERROR ",
+						StringUtils::repeatString("-", 2),
+						StringUtils::repeatString("-", 2)
+					) + "\n\n" + fErrorString;
 		}
 
 		return fullError;
