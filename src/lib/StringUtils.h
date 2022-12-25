@@ -23,11 +23,13 @@ namespace heaval
 			// Surround a string in specific characters.
 			static std::string surroundString(std::string content, std::string a, std::string b);
 
+			/* BOTH DEPRECATED UNTIL FIX.
 			// Uppercase a string.
 			static std::string upperString(std::string tStr);
 
 			// Lowercase a string.
 			static std::string lowerString(std::string tStr);
+			*/
 
 			// Repeat a certain string, and returns it.
 			static std::string repeatString(std::string STRING, int LENGTH);
