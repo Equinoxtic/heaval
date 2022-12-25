@@ -10,6 +10,7 @@ namespace heaval
 {
 	// Class definitions go here...
 
+	/* DEPRECATED
 	std::string caseString(int mode, std::string str) // For lowerString and upperString function.
 	{
 		std::string f_string;
@@ -26,6 +27,7 @@ namespace heaval
 		}
 		return f_string;
 	}
+	*/
 
 	std::string StringUtils::quoteString(std::string content)
 	{
@@ -34,9 +36,13 @@ namespace heaval
 
 	std::string StringUtils::surroundString(std::string content, std::string a, std::string b)
 	{
-		std::string fString = a + content + b; return fString;
+		std::string fString;fString.append(a);
+							fString.append(content);
+							fString.append(b);
+		return fString;
 	}
 
+	/* BOTH DEPRECATED UNTIL FIX.
 	std::string StringUtils::upperString(std::string tStr)
 	{
 		return std::string(caseString(0, tStr));
@@ -46,6 +52,7 @@ namespace heaval
 	{
 		return std::string(caseString(1, tStr));
 	}
+	*/
 
 	std::string StringUtils::repeatString(std::string STRING, int LENGTH)
 	{
