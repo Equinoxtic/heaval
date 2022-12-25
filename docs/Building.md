@@ -11,4 +11,4 @@ cmake --build build --target heavalframework --config release
 
 --------
 
-And that's it! Now yo can just run ``./scripts/run.bat (WINDOWS) | ./scripts/run.sh (LINUX)``
+And that's it! Now yo can just run ``./run.bat (WINDOWS) | ./run.sh (LINUX)``
