@@ -109,6 +109,8 @@ set(SOURCE_FRAMEWORK_DISPLAY
 set(SOURCE_FRAMEWORK_HANDLES
 	src/framework/modules/handle/Error.cpp
 	src/framework/modules/handle/Error.h
+	src/framework/modules/handle/Warning.cpp
+	src/framework/modules/handle/Warning.h
 )
 
 source_group("framework" FILES ${SOURCE_FRAMEWORK})
