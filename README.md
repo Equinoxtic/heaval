@@ -35,3 +35,5 @@ python -u "scripts/CreateHeader.py"
 * [Changelog](https://github.com/Equinoxtic/heaval/blob/lts/docs/Changelog.md)
 * [Config Folder](https://github.com/Equinoxtic/heaval/files/10299518/config.zip)
 <!-- * [Building Documentation](https://github.com/Equinoxtic/heaval/blob/master/docs/Building.md) -->
+
+Note that running ``Heaval.cpp`` will only lead to you using a demo of what the framework can do and what it is capable of.
