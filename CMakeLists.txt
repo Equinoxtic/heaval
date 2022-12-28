@@ -71,8 +71,18 @@ set(SOURCE_LIB_SYS
 	src/lib/sys/System.h
 )
 
+set (SOURCE_LIB_GIT
+	src/lib/git/GitUtils.cpp
+	src/lib/git/GitUtils.h
+	src/lib/git/GitDown.cpp
+	src/lib/git/GitDown.h
+	src/lib/git/LibGit.cpp
+	src/lib/git/LibGit.h
+)
+
 source_group("lib" FILES ${SOURCE_LIB})
 source_group("lib\\sys" FILES ${SOURCE_LIB_SYS})
+source_group("lib\\git" FIELS ${SOURCE_LIB_GIT})
 
 set(SOURCE_COMMON
 	src/common/Paths.cpp
@@ -95,6 +105,8 @@ set(SOURCE_FRAMEWORK
 set(SOURCE_FRAMEWORK_INFO
 	src/framework/info/Version.cpp
 	src/framework/info/Version.h
+	src/framework/info/Repository.cpp
+	src/framework/info/Repository.h
 )
 
 set(SOURCE_FRAMEWORK_DISPLAY
@@ -130,6 +142,7 @@ set(HEAVAL_SOURCE
 	${SOURCE_MATH}
 	${SOURCE_LIB}
 	${SOURCE_LIB_SYS}
+	${SOURCE_LIB_GIT}
 	${SOURCE_FRAMEWORK}
 	${SOURCE_FRAMEWORK_INFO}
 	${SOURCE_COMMON}
