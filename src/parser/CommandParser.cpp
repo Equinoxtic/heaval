@@ -13,17 +13,19 @@ namespace heaval
 {
 	/* Class definitions can go here. */
 
-	const int CommandParser::COMMAND_LIST_SIZE = 3;
+	const int CommandParser::COMMAND_LIST_SIZE = 4;
 
-	std::string commandList[CommandParser::COMMAND_LIST_SIZE] = {
+	std::string commandList[] = {
 		"help",
 		"clear",
+		"git",
 		"exit"
 	};
 
-	std::string commandDescriptions[CommandParser::COMMAND_LIST_SIZE] = {
+	std::string commandDescriptions[] = {
 		"help",
 		"clear screen",
+		"get repository info",
 		"out"
 	};
 
@@ -38,14 +40,14 @@ namespace heaval
 					+ StringUtils::repeatString("\n", 2)
 			);
 		}
-		CommandHandler::pushCommands(commandList, commandDescriptions, CommandParser::COMMAND_LIST_SIZE);
+		CommandHandler::pushCommands(commandList, commandDescriptions, std::size(commandList));
 	}
 
 	void CommandParser::parseHandler(std::string input)
 	{
 		if (!StringUtils::stringEmpty(input))
 		{
-			CommandHandler::parseCommand(commandList, input, CommandParser::COMMAND_LIST_SIZE);
+			CommandHandler::parseCommand(commandList, input, std::size(commandList));
 		}
 	}
 }
