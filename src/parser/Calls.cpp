@@ -1,8 +1,10 @@
 #include "Calls.h"
 #include "CommandParser.h"
 #include "framework/HeavalFramework.h"
+#include "framework/info/Repository.h"
 #include "lib/StringUtils.h"
 #include "lib/sys/System.h"
+#include "io/Stdio.h"
 
 /*
 	Auto-Generated C++ file for header: Calls.h (Created with CreateHeader.py)
@@ -24,6 +26,10 @@ namespace heaval
 
 			if (StringUtils::strCompare(cmdInput, "clear")) {
 				System::Clear();
+			}
+
+			if (StringUtils::strCompare(cmdInput, "git")) {
+				Stdio::put("\n"); Repository::outputReadme(); Stdio::put("\n");
 			}
 
 			if (StringUtils::strCompare(cmdInput, "exit")) {
