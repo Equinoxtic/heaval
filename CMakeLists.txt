@@ -127,10 +127,18 @@ set(SOURCE_FRAMEWORK_HANDLES
 	src/framework/modules/handle/Process.h
 )
 
+set (SOURCE_FRAMEWORK_BROWSE
+	src/framework/modules/browselib/Link.cpp
+	src/framework/modules/browselib/Link.h
+	src/framework/modules/browselib/Browser.cpp
+	src/framework/modules/browselib/Browser.h
+)
+
 source_group("framework" FILES ${SOURCE_FRAMEWORK})
 source_group("framework\\info" FILES ${SOURCE_FRAMEWORK_INFO})
 source_group("framework\\modules\\display" FILES ${SOURCE_FRAMEWORK_DISPLAY})
 source_group("framework\\modules\\handle" FILES ${SOURCE_FRAMEWORK_HANDLES})
+source_group("framework\\modules\\browselib" FILES ${SOURCE_FRAMEWORK_BROWSE})
 
 set(HEAVAL_SOURCE
 	${SOURCE_MAIN}
@@ -148,6 +156,7 @@ set(HEAVAL_SOURCE
 	${SOURCE_COMMON}
 	${SOURCE_FRAMEWORK_DISPLAY}
 	${SOURCE_FRAMEWORK_HANDLES}
+	${SOURCE_FRAMEWORK_BROWSE}
 )
 
 link_directories(${HEAVAL_SOURCE})

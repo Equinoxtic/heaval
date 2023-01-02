@@ -57,9 +57,9 @@ namespace heaval
 	{
 		if (Platform::checkPlatform("Windows"))
 		{
-			system(System::getCommand("powershell -command " + command));
+			system(System::getCommand("powershell -command" + command));
 		}
-		else if (Platform::checkPlatform("Default"))
+		else
 		{
 			system(System::getCommand(command));
 		}
