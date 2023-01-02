@@ -4,6 +4,7 @@
 #include "lib/StringUtils.h"
 #include "lib/sys/System.h"
 #include "parser/CommandParser.h"
+#include "modules/browselib/Link.h"
 
 namespace heaval
 {
@@ -22,6 +23,8 @@ namespace heaval
 		{
 			FrameworkHooks::IntializeHooks();
 		}
+
+		Link::openLink("https://github.com");
 
 		FrameworkHooks::GenerateShellPrompt();
 
