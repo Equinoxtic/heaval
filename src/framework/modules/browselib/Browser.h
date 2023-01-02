@@ -19,6 +19,8 @@ namespace heaval
 			static std::string getUrlInfo(std::string link);
 
 			static void outputUrlInfo(std::string linkString);
+
+			static void openUrl(std::string linkString);
 			
 		private:
 			/* Private variables / members go here. */

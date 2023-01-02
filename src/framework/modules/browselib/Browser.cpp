@@ -3,6 +3,7 @@
 #include "lib/StringUtils.h"
 #include "lib/sys/System.h"
 #include "io/Stdio.h"
+#include "io/StdUtils.h"
 #include "framework/modules/handle/Warning.h"
 
 /*
@@ -76,6 +77,30 @@ namespace heaval
 
 	void Browser::outputUrlInfo(std::string linkString)
 	{
-		Stdio::put(Browser::getUrlInfo(linkString));
+		Stdio::putLn(Browser::getUrlInfo(linkString));
+	}
+
+	void Browser::openUrl(std::string linkString)
+	{
+		std::string fLinkPrefix;
+
+		int randindx = rand() % 3;
+
+		if (!StringUtils::stringEmpty(linkString))
+		{
+			fLinkPrefix = linkString;
+		}
+		else
+		{
+			Warning::DEFAULT_MESSAGE = "Link is empty. Generating automatic link...";
+			Warning::outputWarning();
+			fLinkPrefix = "https://github.com";
+		}
+
+		Link::openLink(fLinkPrefix);
+
+		Stdio::put(StringUtils::repeatString("\n", 2));
+
+		Browser::outputUrlInfo(fLinkPrefix); StdUtils::newline();
 	}
 }
