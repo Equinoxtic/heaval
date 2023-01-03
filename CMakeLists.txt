@@ -29,6 +29,8 @@ set(SOURCE_CMDUTILS
 	src/cmdutils/CommandHandler.h
 	src/cmdutils/Flag.cpp
 	src/cmdutils/Flag.h
+	src/cmdutils/Option.cpp
+	src/cmdutils/Option.h
 )
 
 source_group("cmdutils" FILES ${SOURCE_CMDUTILS})
