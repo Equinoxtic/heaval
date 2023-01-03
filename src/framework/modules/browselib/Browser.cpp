@@ -5,6 +5,8 @@
 #include "io/Stdio.h"
 #include "io/StdUtils.h"
 #include "framework/modules/handle/Warning.h"
+#include "console/ConsoleLogging.h"
+#include "common/Paths.h"
 
 /*
 	Auto-Generated C++ file for header: Browser.h (Created with CreateHeader.py)
@@ -84,8 +86,6 @@ namespace heaval
 	{
 		std::string fLinkPrefix;
 
-		int randindx = rand() % 3;
-
 		if (!StringUtils::stringEmpty(linkString))
 		{
 			fLinkPrefix = linkString;
@@ -96,6 +96,8 @@ namespace heaval
 			Warning::outputWarning();
 			fLinkPrefix = "https://github.com";
 		}
+
+		ConsoleLogging::log("Opened Link: " + linkString, Paths::getLogFile());
 
 		Link::openLink(fLinkPrefix);
 
