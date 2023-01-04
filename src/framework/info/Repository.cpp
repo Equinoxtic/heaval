@@ -4,6 +4,10 @@
 #include "lib/git/LibGit.h"
 #include "lib/StringUtils.h"
 #include "io/Stdio.h"
+#include "io/StdUtils.h"
+#include "framework/modules/display/Prompt.h"
+#include "framework/modules/browselib/Link.h"
+#include "framework/modules/handle/Process.h"
 
 /*
 	Auto-Generated C++ file for header: Repository.h (Created with CreateHeader.py)
@@ -20,8 +24,14 @@ namespace heaval
 		return GitUtils::getRepoLink("Equinoxtic/heaval");
 	}
 
-	void Repository::outputReadme()
+	void Repository::outputReadme(bool promptOpen)
 	{
+		Prompt::YXOPTIONSTRING = "Open Repository README?";
+		Prompt::YXOPTION = "Y/N";
+		Prompt::YXBORDER = "brackets";
+
+		std::string promptOption;
+
 		std::string readmeln[] = {
 			GitDown::header("Heaval", 1),
 			"\nA Minimal GUI framework for console applications made with C++ w/ CMake.",
@@ -56,9 +66,28 @@ namespace heaval
 		{
 			Stdio::put(readmeln[i] + "\n");
 		}
+
+		if (promptOpen)
+		{
+			StdUtils::newline();
+			Prompt::displayOptionPrompt();
+			Stdio::get(promptOption);
+			
+			if (!StringUtils::stringEmpty(promptOption))
+			{
+				if (StringUtils::strCompare(promptOption, "Y") || StringUtils::strCompare(promptOption, "y"))
+				{
+					Link::openLink("https://github.com/Equinoxtic/heaval/blob/master/README.md");
+				}
+				else if (StringUtils::strCompare(promptOption, "N") || StringUtils::strCompare(promptOption, "n"))
+				{
+					Stdio::putLn("\n" + Process::getCancel());
+				}
+			}
+		}
 	}
 
-	void Repository::outputRepositorySource(bool includeReadme)
+	void Repository::outputRepositorySource(bool includeReadme, bool promptOpen)
 	{
 		std::string repositorySource[] = {
 			LibGit::createFsItem(true, ".github/ISSUE_TEMPLATE"),
@@ -74,6 +103,9 @@ namespace heaval
 			LibGit::createFsItem(false, "build", "bat", "Batch Script File"),
 			LibGit::createFsItem(false, "build", "sh", "Bash Script File")
 		};
+		
+
+		Stdio::putLn(": " + StringUtils::surroundString("Equinoxtic/Heaval", "[ ", " ]") + "\n");
 
 		LibGit::pushFileSystem(repositorySource, std::size(repositorySource));
 
