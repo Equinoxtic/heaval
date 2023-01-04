@@ -47,10 +47,14 @@ namespace heaval
 				{
 					Repository::outputRepositorySource(true);
 				}
+				else
+				{
+					Repository::outputReadme();
+				}
 				StdUtils::newline();
 			}
 
-			if (StringUtils::strCompare(cmdInput, "exit")) {
+			if (StringUtils::strCompare(cmdInput, "exit") || StringUtils::strCompare(cmdInput, "quit") || StringUtils::strCompare(cmdInput, "q")) {
 				System::Exit(1);
 			} else {
 				HeavalFramework::ENTRY_POINT(false);
