@@ -19,6 +19,25 @@ namespace heaval
 {
 	/* Class definitions can go here. */
 
+	void promptHandler(std::string promptOptionString, std::string linkCallback)
+	{
+		if (!StringUtils::stringEmpty(promptOptionString))
+		{
+			if (StringUtils::strCompare(promptOptionString, "Y") || StringUtils::strCompare(promptOptionString, "y"))
+			{
+				Link::openLink(linkCallback);
+			}
+			else if (StringUtils::strCompare(promptOptionString, "N") || StringUtils::strCompare(promptOptionString, "n"))
+			{
+				Stdio::putLn("\n" + Process::getCancel());
+			}
+		}
+		else
+		{
+			Stdio::putLn("\n" + Process::getCancel());
+		}
+	}
+
 	std::string Repository::getRepositoryLink()
 	{
 		return GitUtils::getRepoLink("Equinoxtic/heaval");
@@ -26,31 +45,27 @@ namespace heaval
 
 	void Repository::outputReadme(bool promptOpen)
 	{
-		Prompt::YXOPTIONSTRING = "Open Repository README?";
-		Prompt::YXOPTION = "Y/N";
-		Prompt::YXBORDER = "brackets";
-
 		std::string promptOption;
 
 		std::string readmeln[] = {
 			GitDown::header("Heaval", 1),
 			"\nA Minimal GUI framework for console applications made with C++ w/ CMake.",
-			"\n------------------------------------------------------------------------------------------",
+			"\n" + GitDown::line(97, 1),
 			"\n" + GitDown::header("Requirements", 2),
-			"__________________________________________________________________________________________",
+			GitDown::line(97, 2),
 			"\n* Git - https://git-scm.com/downloads",
 			"* CMake 3.2+ - https://cmake.org/download/",
 			"* Visual Studio 2022 - https://visualstudio.microsoft.com/downloads/",
 			"* Python (Optional) - https://www.python.org/downloads/",
 			"\n" + GitDown::header("Building Documentation", 2),
-			"__________________________________________________________________________________________",
+			GitDown::line(97, 2),
 			"\nFollow the link to get started on building Heaval from source.",
 			"* Documentation - https://github.com/Equinoxtic/heaval/blob/master/docs/Building.md",
 			"\n" + GitDown::header("Creating new headers", 2),
-			"__________________________________________________________________________________________",
+			GitDown::line(97, 2),
 			"\nCreating a new header will require Python.",
 			"\nRun the following code:\n\npython -u \"scripts/CreateHeader.py\"",
-			"\n------------------------------------------------------------------------------------------",
+			"\n" + GitDown::line(97, 1),
 			"\nExtra repository information",
 			"* License - https://github.com/Equinoxtic/heaval/blob/master/LICENSE",
 			"* Changelog - https://github.com/Equinoxtic/heaval/blob/lts/docs/Changelog.md",
@@ -70,25 +85,23 @@ namespace heaval
 		if (promptOpen)
 		{
 			StdUtils::newline();
-			Prompt::displayOptionPrompt();
+
+			Stdio::put(Prompt::createOptionPrompt(
+				"Open README?",
+				"Y/N",
+				"parenthesis"
+			));
+
 			Stdio::get(promptOption);
 			
-			if (!StringUtils::stringEmpty(promptOption))
-			{
-				if (StringUtils::strCompare(promptOption, "Y") || StringUtils::strCompare(promptOption, "y"))
-				{
-					Link::openLink("https://github.com/Equinoxtic/heaval/blob/master/README.md");
-				}
-				else if (StringUtils::strCompare(promptOption, "N") || StringUtils::strCompare(promptOption, "n"))
-				{
-					Stdio::putLn("\n" + Process::getCancel());
-				}
-			}
+			promptHandler(promptOption, "https://github.com/Equinoxtic/heaval/blob/master/README.md");
 		}
 	}
 
 	void Repository::outputRepositorySource(bool includeReadme, bool promptOpen)
 	{
+		std::string promptOption;
+		
 		std::string repositorySource[] = {
 			LibGit::createFsItem(true, ".github/ISSUE_TEMPLATE"),
 			LibGit::createFsItem(true, "config"),
@@ -112,6 +125,21 @@ namespace heaval
 		if (includeReadme)
 		{
 			Stdio::put("\n"); Repository::outputReadme();
+		}
+
+		if (promptOpen)
+		{
+			StdUtils::newline();
+
+			Stdio::put(Prompt::createOptionPrompt(
+				"Open Source Code?",
+				"Y/N",
+				"parenthesis"
+			));
+			
+			Stdio::get(promptOption);
+
+			promptHandler(promptOption, "https://github.com/Equinoxtic/heaval");
 		}
 	}
 }
