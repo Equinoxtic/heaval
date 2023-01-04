@@ -19,7 +19,7 @@ namespace heaval
 
 		if (!StringUtils::stringEmpty(optionName))
 		{
-			fOptionString = StringUtils::surroundString(Convert::numToStr(optionNum), "(", ")") + " : " + StringUtils::quoteString(optionName);
+			fOptionString = "*" + StringUtils::surroundString(Convert::numToStr(optionNum), "(", ")") + " : " + StringUtils::quoteString(optionName);
 		}
 
 		return fOptionString;
