@@ -5,6 +5,7 @@
 #include "lib/StringUtils.h"
 #include "lib/sys/System.h"
 #include "io/Stdio.h"
+#include "io/StdUtils.h"
 
 /*
 	Auto-Generated C++ file for header: Calls.h (Created with CreateHeader.py)
@@ -28,11 +29,32 @@ namespace heaval
 				System::Clear();
 			}
 
-			if (StringUtils::strCompare(cmdInput, "git")) {
-				Stdio::put("\n"); Repository::outputReadme(); Stdio::put("\n");
+			if (StringUtils::startsWith(cmdInput, "git")) {
+				StdUtils::newline();
+				if (StringUtils::findString(cmdInput, "-rmp"))
+				{
+					Repository::outputReadme(true);
+				}
+				else if (StringUtils::findString(cmdInput, "-rm"))
+				{
+					Repository::outputReadme();
+				}
+				else if (StringUtils::findString(cmdInput, "-srcp"))
+				{
+					Repository::outputRepositorySource(true, true);
+				}
+				else if (StringUtils::findString(cmdInput, "-src"))
+				{
+					Repository::outputRepositorySource(true);
+				}
+				else
+				{
+					Repository::outputReadme();
+				}
+				StdUtils::newline();
 			}
 
-			if (StringUtils::strCompare(cmdInput, "exit")) {
+			if (StringUtils::strCompare(cmdInput, "exit") || StringUtils::strCompare(cmdInput, "quit") || StringUtils::strCompare(cmdInput, "q")) {
 				System::Exit(1);
 			} else {
 				HeavalFramework::ENTRY_POINT(false);

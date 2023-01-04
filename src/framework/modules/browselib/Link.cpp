@@ -55,13 +55,17 @@ namespace heaval
 
 		if (!StringUtils::stringEmpty(link))
 		{
-			if (!StringUtils::startsWith(link, "https")) {
+			if (!StringUtils::startsWith(link, "https://")) {
 				linkPrefix = protocolInit("https") + link;
 			} else {
 				linkPrefix = link;
 			}
-
-			System::Execute("start " + linkPrefix);
 		}
+		else
+		{
+			linkPrefix = "https://google.com";
+		}
+
+		System::Execute("start " + linkPrefix);
 	}
 }
