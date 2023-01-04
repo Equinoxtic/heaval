@@ -25,13 +25,13 @@ namespace heaval
 			// Clear the screen.
 			static void Clear();
 
-			static const char* getCommand(std::string __command__);
+			static const char* getCommand(std::string command);
 
 			// Execute a command w/ OS identification.
-			static void Execute(std::string command);
+			static void Execute(std::string command, bool forceDefaultMode = false);
 
-			// Execute a standalone command without OS identification.
-			static void ExecuteLone(std::string command);
+			// Legacy System Execution (NOT RECOMMENDED)
+			static void ExecuteLegacy(std::string command);
 			
 		private:
 			// Private keywords go here...

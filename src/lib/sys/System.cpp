@@ -48,12 +48,30 @@ namespace heaval
 		#endif
 	}
 
-	const char* System::getCommand(std::string __command__)
+	const char* System::getCommand(std::string command)
 	{
-		const char* fCommand = __command__.c_str(); return fCommand;
+		std::string commandString = command; const char* fCommand = commandString.c_str(); return fCommand;
 	}
 
-	void System::Execute(std::string command)
+	void System::Execute(std::string command, bool forceDefaultMode)
+	{
+		std::string commandPrefix = "";
+
+		if (forceDefaultMode)
+		{
+			#ifdef _WIN32
+			commandPrefix = "powershell -command ";
+			#endif
+		}
+
+		commandPrefix = commandPrefix + command;
+
+		const char* fullCommand = commandPrefix.c_str();
+
+		system(fullCommand);
+	}
+
+	void System::ExecuteLegacy(std::string command)
 	{
 		if (Platform::checkPlatform("Windows"))
 		{
@@ -63,10 +81,5 @@ namespace heaval
 		{
 			system(System::getCommand(command));
 		}
-	}
-
-	void System::ExecuteLone(std::string command)
-	{
-		system(System::getCommand(command));
 	}
 }
