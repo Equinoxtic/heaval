@@ -56,11 +56,11 @@ namespace heaval
 
 	std::string StringUtils::repeatString(std::string STRING, int LENGTH)
 	{
-		const int MAX_LENGTH = 150;
+		const int MAX_LENGTH = 256;
 
 		std::string NEW_STRING;
 
-		if (LENGTH >= 150)
+		if (LENGTH >= 256)
 		{
 			LENGTH = MAX_LENGTH;
 		}

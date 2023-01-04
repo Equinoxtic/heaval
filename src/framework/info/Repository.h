@@ -18,9 +18,9 @@ namespace heaval
 
 			static std::string getRepositoryLink();
 
-			static void outputReadme();
+			static void outputReadme(bool promptOpen = false);
 
-			static void outputRepositorySource(bool includeReadme);
+			static void outputRepositorySource(bool includeReadme, bool promptOpen = false);
 			
 		private:
 			/* Private variables / members go here. */

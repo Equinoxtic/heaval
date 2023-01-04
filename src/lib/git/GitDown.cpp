@@ -68,7 +68,7 @@ namespace heaval
 
 		if (size == 1) {
 			lineString = StringUtils::repeatString("-", length);
-		} else {
+		} else if (size == 2) {
 			lineString = StringUtils::repeatString("_", length);
 		}
 
