@@ -2,6 +2,7 @@
 #include "TextBox.h"
 #include "lib/StringUtils.h"
 #include "io/Stdio.h"
+#include "InstanceLogger.h"
 
 /*
 	Auto-Generated C++ file for header: DialogueBox.h (Created with CreateHeader.py)
@@ -38,8 +39,7 @@ namespace heaval
 		std::string ptype_parse;
 
 		if (
-					StringUtils::strCompare(promptTypeString, "input")
-				||	StringUtils::strCompare(promptTypeString, "nochoice")
+					StringUtils::strCompare(promptTypeString, "input") ||	StringUtils::strCompare(promptTypeString, "nochoice")
 				||	StringUtils::strCompare(promptTypeString, "parsestring")
 				||	StringUtils::strCompare(promptTypeString, "inputstring")
 		   )
@@ -61,8 +61,19 @@ namespace heaval
 		}
 	}
 
+	std::string DialogueBox::getDialogueBoxName(DialogueBox &dialogueBoxObject)
+	{
+		return dialogueBoxObject.name;
+	}
+
+	void DialogueBox::outDialogueBoxName(DialogueBox &dialogueBoxObject)
+	{
+		Stdio::put(dialogueBoxObject.name);
+	}
+
 	void DialogueBox::pushDialogueBox(DialogueBox &dialogueBoxObject)
 	{
+		InstanceLogger::logFromString("dialogue anyone?", "DialogueBox", dialogueBoxObject.name);
 		Stdio::put(dialogueBoxObject.content);
 	}
 }

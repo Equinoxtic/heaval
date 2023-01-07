@@ -26,6 +26,10 @@ namespace heaval
 
 			static std::string setDialogueBoxPromptType(std::string promptTypeString);
 
+			static std::string getDialogueBoxName(DialogueBox &dialogueBoxObject);
+
+			static void outDialogueBoxName(DialogueBox &dialogueBoxObject);
+
 			static void pushDialogueBox(DialogueBox &dialogueBoxObject);
 			
 		private:

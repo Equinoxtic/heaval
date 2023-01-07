@@ -1,6 +1,7 @@
 #include "TextBox.h"
 #include "lib/StringUtils.h"
 #include "io/Stdio.h"
+#include "InstanceLogger.h"
 
 /*
 	Auto-Generated C++ file for header: TextBox.h (Created with CreateHeader.py)
@@ -25,9 +26,20 @@ namespace heaval
 
 		return fTextString;
 	}
+	
+	std::string TextBox::getTextBoxName(TextBox &textBoxObject)
+	{
+		return textBoxObject.name;
+	}
+
+	void TextBox::outTextBoxName(TextBox &textBoxObject)
+	{
+		Stdio::put(textBoxObject.name);
+	}
 
 	void TextBox::pushTextBox(TextBox &textBoxObject)
 	{
+		InstanceLogger::logFromString("lil\' text box =)", "TextBox", textBoxObject.name);
 		Stdio::put(textBoxObject.content);
 	}
 }
