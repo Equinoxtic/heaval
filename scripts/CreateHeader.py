@@ -40,8 +40,8 @@ def write_to_file(_file, content, mode):
 			f.write(content)
 
 def create_files(dirptr, nameptr):
-	system(f"touch {dirptr}/{nameptr}.cpp")
-	system(f"touch {dirptr}/{nameptr}.h")
+	system(f"powershell -command ni {dirptr}/{nameptr}.cpp")
+	system(f"powershell -command ni {dirptr}/{nameptr}.h")
 
 def write_to_header_files(dirptr, nameptr, lntable=None):
 	if lntable is None:
@@ -114,7 +114,7 @@ def create_header():
 			create_files(directory, name)
 			create_header_sources(directory, name, "h", h_file_ln)
 			create_header_sources(directory, name, "cpp", cpp_file_ln)
-			print(f"\n{BLUE}Created header files for {name}{END} @ {GREEN}[~/{directory}/]{END}")
+            print(f"\n{BLUE}Created header files for {name}{END} @ {GREEN}[~/{directory}/]{END}\n\n{RED}NOTE: {END}{ORANGE}\"Creating a header will needed to be sourced at CMakeLists.txt.\"{END}")
 
 
 
