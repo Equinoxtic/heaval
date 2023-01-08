@@ -1,3 +1,8 @@
 [Bb]uild/
 [Ll]ogs/
 .vscode/
+
+# Some C/C++ files
+*.exe
+*.o
+*.out

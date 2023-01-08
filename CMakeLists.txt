@@ -111,6 +111,31 @@ set(SOURCE_FRAMEWORK_INFO
 	src/framework/info/Repository.h
 )
 
+set(SOURCE_FRAMEWORK_GUI
+	src/framework/gui/TestGui.cpp
+	src/framework/gui/TestGui.h
+)
+
+set(SOURCE_FRAMEWORK_GUI_UTILS
+	src/framework/gui/utils/Gui.cpp
+	src/framework/gui/utils/Gui.h
+	src/framework/gui/utils/GuiTitle.cpp
+	src/framework/gui/utils/GuiTitle.h
+	src/framework/gui/utils/GuiGuide.cpp
+	src/framework/gui/utils/GuiGuide.h
+)
+
+set(SOURCE_FRAMEWORK_GUI_OBJECTS
+	src/framework/gui/objects/Button.cpp
+	src/framework/gui/objects/Button.h
+	src/framework/gui/objects/DialogueBox.cpp
+	src/framework/gui/objects/DialogueBox.h
+	src/framework/gui/objects/TextBox.cpp
+	src/framework/gui/objects/TextBox.h
+	src/framework/gui/objects/InstanceLogger.cpp
+	src/framework/gui/objects/InstanceLogger.h
+)
+
 set(SOURCE_FRAMEWORK_DISPLAY
 	src/framework/modules/display/Title.cpp
 	src/framework/modules/display/Title.h
@@ -138,6 +163,9 @@ set (SOURCE_FRAMEWORK_BROWSE
 
 source_group("framework" FILES ${SOURCE_FRAMEWORK})
 source_group("framework\\info" FILES ${SOURCE_FRAMEWORK_INFO})
+source_group("framework\\gui" FILES ${SOURCE_FRAMEWORK_GUI})
+source_group("framework\\gui\\objects" FILES ${SOURCE_FRAMEWORK_GUI_OBJECTS})
+source_group("framework\\gui\\utils" FILES ${SOURCE_FRAMEWORK_GUI_UTILS})
 source_group("framework\\modules\\display" FILES ${SOURCE_FRAMEWORK_DISPLAY})
 source_group("framework\\modules\\handle" FILES ${SOURCE_FRAMEWORK_HANDLES})
 source_group("framework\\modules\\browselib" FILES ${SOURCE_FRAMEWORK_BROWSE})
@@ -155,6 +183,9 @@ set(HEAVAL_SOURCE
 	${SOURCE_LIB_GIT}
 	${SOURCE_FRAMEWORK}
 	${SOURCE_FRAMEWORK_INFO}
+	${SOURCE_FRAMEWORK_GUI}
+	${SOURCE_FRAMEWORK_GUI_OBJECTS}
+	${SOURCE_FRAMEWORK_GUI_UTILS}
 	${SOURCE_COMMON}
 	${SOURCE_FRAMEWORK_DISPLAY}
 	${SOURCE_FRAMEWORK_HANDLES}

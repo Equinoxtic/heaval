@@ -1,5 +1,3 @@
-# Improved Create Header script by Lari_ssa.
-
 from os import system
 
 # Text Colors
@@ -40,8 +38,8 @@ def write_to_file(_file, content, mode):
 			f.write(content)
 
 def create_files(dirptr, nameptr):
-	system(f"powershell -command ni {dirptr}/{nameptr}.cpp")
-	system(f"powershell -command ni {dirptr}/{nameptr}.h")
+	system(f"touch {dirptr}/{nameptr}.cpp")
+	system(f"touch {dirptr}/{nameptr}.h")
 
 def write_to_header_files(dirptr, nameptr, lntable=None):
 	if lntable is None:
@@ -55,36 +53,37 @@ def create_header_sources(dirptr, nameptr, extptr, tbl=None):
 		write_to_header_files(dirptr, f"{nameptr}.{extptr}", tbl[i])
 
 def print_title():
-	print(f"{GREEN}\n[C++ Header Creation Script]{END}\n {BLUE}~ By{END} {PURPLE}Larixssa{END} {RED}<3{END}")
+	print(f"{GREEN}\n[Heaval GUI Header Creation Script]{END}")
 
-def create_header():
+def create_gui_header():
 	print_title()
 	name = ""
-	directory = "src"
-	print(f"\n{CYAN}[Input name]{END} {GREEN}~ ${END} ", end="")
+	print(f"\n{CYAN}[Input GUI name]{END} {GREEN}~ ${END} ", end="")
 	name = input()
-	print(f"\n{CYAN}[Directory to create]{END} {GREEN}~ ${END} ", end="")
-	directory = input()
-	rep_dir = directory.replace("/", ".")
 	
 	h_file_ln = [
 		f"#ifndef {name.upper()}_H",
 		f"\n#define {name.upper()}_H",
 		"\n\n",
 		"/*\n",
-		"\tAuto-Generated Header file created with CreateHeader.py.\n",
+		"\tAuto-Generated Header GUI file created with GuiGenerator.py.\n",
 		f"\tName: {name}.h\n",
-		f"\tSource: {rep_dir}\n",
+		f"\tSource: src.framework.gui\n",
 		"*/",
 		"\n\n",
 		"#include<string>",
-		"\n\n"
+		"\n",
+        "#include \"utils/Gui.h\"",
+        "\n\n",
 		"namespace heaval\n",
 		"{\n",
-		f"\tclass {name}\n",
+        f"\tclass {name} : public Gui\n",
 		"\t{\n",
+        "\t\tvoid create();\n",
+        "\t\tvoid update(int state);\n\n",
 		"\t\tpublic:\n",
-		"\t\t\t/* Public variables / members go here. */\n",
+		"\t\t\t/* Public variables / members go here. */\n\n",
+        "\t\t\tstatic void load();\n",
 		"\t\t\t\n",
 		"\t\tprivate:\n",
 		"\t\t\t/* Private variables / members go here. */\n",
@@ -98,24 +97,35 @@ def create_header():
 		f"#include \"{name}.h\"",
 		"\n\n",
 		"/*\n",
-		"\tAuto-Generated C++ file for header: " + f"{name}.h (Created with CreateHeader.py)\n",
+		"\tAuto-Generated C++ file for GUI header: " + f"{name}.h (Created with GuiGenerator.py)\n",
 		f"\tName: {name}.cpp\n",
-		f"\tSource: {rep_dir}\n",
+		f"\tSource: src.framework.gui\n",
 		"*/",
 		"\n\n",
 		"namespace heaval\n",
 		"{\n",
-		"\t/* Class definitions can go here. */\n",
+		"\t/* Class definitions can go here. */\n\n",
+        f"\tvoid {name}::create()\n",
+        "\t{\n",
+        "\t\t/* Main GUI code goes here. */\n",
+        "\t}\n\n",
+        f"\tvoid {name}::update(int state)\n",
+        "\t{\n",
+        "\t\t/* Change GUI state here. */\n",
+        "\t}\n\n",
+        f"\tvoid {name}::load()\n",
+        "\t{\n",
+        f"\t\tgui_{name.lower()}; gui_{name.lower()}.create();\n",
+        "\t}\n",
 		"}"
 	]
 	
 	if name is not [None, ""]:
-		if directory is not [None, ""]:
-			create_files(directory, name)
-			create_header_sources(directory, name, "h", h_file_ln)
-			create_header_sources(directory, name, "cpp", cpp_file_ln)
-            print(f"\n{BLUE}Created header files for {name}{END} @ {GREEN}[~/{directory}/]{END}\n\n{RED}NOTE: {END}{ORANGE}\"Creating a header will needed to be sourced at CMakeLists.txt.\"{END}")
+		create_files("src/framework/gui/", name)
+		create_header_sources("src/framework/gui/", name, "h", h_file_ln)
+		create_header_sources("src/framework/gui/", name, "cpp", cpp_file_ln)
+        print(f"\n{BLUE}Created header files for GUI {name}{END} @ {GREEN}[~/src/framework/gui/]{END}\n\n{RED}NOTE: {END}{ORANGE}\"Creating a GUI header will require you to source it at CMakeLists.txt\"{END}")
 
 
 
-create_header()
+create_gui_header()
