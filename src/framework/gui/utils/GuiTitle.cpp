@@ -45,8 +45,30 @@ namespace heaval
 		return defTitleString;
 	}
 
-	void GuiTitle::addTitle(GuiTitle &titleObject)
+	std::string GuiTitle::getTitleString(GuiTitle *titleObject)
 	{
-		Stdio::put(titleObject.titleContent);
+		return titleObject->titleString;
+	}
+
+	std::string GuiTitle::getTitlePath(GuiTitle *titleObject, bool isSub)
+	{
+		std::string t;
+		if (!isSub) t = titleObject->titlePath; else t = titleObject->titleSubPath;
+		return t;
+	}
+
+	std::string GuiTitle::getTitleName(GuiTitle *titleObject)
+	{
+		return titleObject->name;
+	}
+
+	void GuiTitle::outTitleName(GuiTitle *titleObject)
+	{
+		Stdio::put(titleObject->name);
+	}
+
+	void GuiTitle::addTitle(GuiTitle *titleObject)
+	{
+		Stdio::put(titleObject->titleContent);
 	}
 }

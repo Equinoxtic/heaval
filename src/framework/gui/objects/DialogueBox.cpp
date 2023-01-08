@@ -59,21 +59,23 @@ namespace heaval
 		{
 			ptype_parse = "input";
 		}
+
+		return ptype_parse;
 	}
 
-	std::string DialogueBox::getDialogueBoxName(DialogueBox &dialogueBoxObject)
+	std::string DialogueBox::getDialogueBoxName(DialogueBox *dialogueBoxObject)
 	{
-		return dialogueBoxObject.name;
+		return dialogueBoxObject->name;
+	} 
+
+	void DialogueBox::outDialogueBoxName(DialogueBox *dialogueBoxObject)
+	{
+		Stdio::put(dialogueBoxObject->name);
 	}
 
-	void DialogueBox::outDialogueBoxName(DialogueBox &dialogueBoxObject)
+	void DialogueBox::pushDialogueBox(DialogueBox *dialogueBoxObject)
 	{
-		Stdio::put(dialogueBoxObject.name);
-	}
-
-	void DialogueBox::pushDialogueBox(DialogueBox &dialogueBoxObject)
-	{
-		InstanceLogger::logFromString("dialogue anyone?", "DialogueBox", dialogueBoxObject.name);
-		Stdio::put(dialogueBoxObject.content);
+		InstanceLogger::logFromString("dialogue anyone?", "DialogueBox", dialogueBoxObject->name);
+		Stdio::put(dialogueBoxObject->content);
 	}
 }

@@ -29,19 +29,19 @@ namespace heaval
 		return fButton;
 	}
 
-	std::string Button::getButtonName(Button &buttonObject)
+	std::string Button::getButtonName(Button *buttonObject)
 	{
-		return buttonObject.name;
+		return buttonObject->name;
 	}
 
-	void Button::outButtonName(Button &buttonObject)
+	void Button::outButtonName(Button *buttonObject)
 	{
-		Stdio::put(buttonObject.name);
+		Stdio::put(buttonObject->name);
 	}
 
-	void Button::pushButton(Button &buttonObject)
+	void Button::pushButton(Button *buttonObject)
 	{
-		InstanceLogger::logFromString("New button, lovin\' it. <3", "Button", buttonObject.name);
-		Stdio::put(buttonObject.content);
+		InstanceLogger::logFromString("New button, lovin\' it. <3", "Button", buttonObject->name);
+		Stdio::put(buttonObject->content);
 	}
 }

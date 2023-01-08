@@ -27,19 +27,19 @@ namespace heaval
 		return fTextString;
 	}
 	
-	std::string TextBox::getTextBoxName(TextBox &textBoxObject)
+	std::string TextBox::getTextBoxName(TextBox *textBoxObject)
 	{
-		return textBoxObject.name;
+		return textBoxObject->name;
 	}
 
-	void TextBox::outTextBoxName(TextBox &textBoxObject)
+	void TextBox::outTextBoxName(TextBox *textBoxObject)
 	{
-		Stdio::put(textBoxObject.name);
+		Stdio::put(textBoxObject->name);
 	}
 
-	void TextBox::pushTextBox(TextBox &textBoxObject)
+	void TextBox::pushTextBox(TextBox *textBoxObject)
 	{
-		InstanceLogger::logFromString("lil\' text box =)", "TextBox", textBoxObject.name);
-		Stdio::put(textBoxObject.content);
+		InstanceLogger::logFromString("lil\' text box =)", "TextBox", textBoxObject->name);
+		Stdio::put(textBoxObject->content);
 	}
 }

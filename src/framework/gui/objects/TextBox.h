@@ -22,11 +22,11 @@ namespace heaval
 
 			static std::string setTextBoxContent(std::string textContent);
 
-			static std::string getTextBoxName(TextBox &textBoxObject);
+			static std::string getTextBoxName(TextBox *textBoxObject);
 
-			static void outTextBoxName(TextBox &textBoxObject);
+			static void outTextBoxName(TextBox *textBoxObject);
 
-			static void pushTextBox(TextBox &textBoxObject);
+			static void pushTextBox(TextBox *textBoxObject);
 			
 		private:
 			/* Private variables / members go here. */

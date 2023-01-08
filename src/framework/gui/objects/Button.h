@@ -22,11 +22,11 @@ namespace heaval
 
 			static std::string setButtonContent(std::string buttonContent, bool spaced = false);
 
-			static std::string getButtonName(Button &buttonObject);
+			static std::string getButtonName(Button *buttonObject);
 
-			static void outButtonName(Button &buttonObject);
+			static void outButtonName(Button *buttonObject);
 
-			static void pushButton(Button &buttonObject);
+			static void pushButton(Button *buttonObject);
 
 		private:
 			/* Private variables / members go here. */
