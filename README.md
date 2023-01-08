@@ -7,6 +7,7 @@ A minimal GUI framework for console applications made with C++ w/ CMake.
 ## Requirements
 
 * Git - [Download](https://git-scm.com/downloads)
+* GCC compiler - [Download](https://gcc.gnu.org/install/binaries.html)
 * CMake 3.2+ - [Download](https://cmake.org/download/)
 * Visual Studio 2022 - [Download](https://visualstudio.microsoft.com/downloads/)
 * Python (Optional) - [Download](https://www.python.org/downloads/)
