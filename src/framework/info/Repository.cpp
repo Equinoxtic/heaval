@@ -55,6 +55,7 @@ namespace heaval
 			GitDown::line(97, 2),
 			"\n* Git - https://git-scm.com/downloads",
 			"* CMake 3.2+ - https://cmake.org/download/",
+			"* GCC compiler - https://gcc.gnu.org/install/binaries.html",
 			"* Visual Studio 2022 - https://visualstudio.microsoft.com/downloads/",
 			"* Python (Optional) - https://www.python.org/downloads/",
 			"\n" + GitDown::header("Building Documentation", 2),

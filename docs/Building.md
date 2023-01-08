@@ -22,8 +22,6 @@ If you have a GCC installed, you can now go ahead and proceed to compiling ``bui
 Run the following set of commands to build the project:
 
 ```shell
-mkdir build
-cmake -G "Visual Studio 17 2022" -A Win32 -S . -B build
 gcc -o build build.c buildutils.c
 ./build
 ```
