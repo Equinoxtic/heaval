@@ -5,10 +5,6 @@
 
 int main(int argc, char **argv)
 {
-	if (chk_path("build/") != 0) {
-		exec_cmd("cmake -G \"Visual Studio 17 2022\" -A Win32 -S . -B build");
-	}
-
 	exec_cmd("cmake --build build --target heavalframework --config Release");
 
 	// Create directories
