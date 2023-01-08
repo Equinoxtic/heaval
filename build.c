@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 	exec_cmd("cmake --build build --target heavalframework --config Release");
 
 	// Create directories
-	if (chk_path("build/Release/config/") != 0 || chk_path("build/Release/logs/") != 0)
+	if (chk_path("build/Release/config/") == 0 || chk_path("build/Release/logs/") == 0)
 	{
 		#ifdef _WIN32
 			exec_cmd("powershell -command mkdir build/Release/config/");
