@@ -58,29 +58,3 @@ void exec_cmd(const char* cmd_to_exec)
 	system(t_cmd);
 }
 
-int put_case_ch(const char* p_ch, const char* case_mode)
-{
-	char t_ch;
-
-	int i = 0;
-
-	while(p_ch[i]) {
-		t_ch = p_ch[i];
-		if (strcmp(case_mode, "upper") == 0) {
-			putchar(toupper(t_ch));
-		} else if (strcmp(case_mode, "lower") == 0) {
-			putchar(tolower(t_ch));
-		}
-		++i;
-	}
-
-	return 0;
-}
-
-char* concat_string(const char* s1, const char* s2)
-{
-	char* res = malloc(strlen(s1) + strlen(s2) + 1);
-	strcpy(res, s1);
-	strcat(res, s2);
-	return res;
-}
